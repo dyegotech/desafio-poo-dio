@@ -24,7 +24,16 @@ public class Mentoria extends Conteudo {
 
     @Override
     public double calcularXP() {
-        return XP_PADRAO + 20d;
+        return XP_PADRAO + 20;
+    }
+
+    @Override
+    public String detalhesCalculoXP() {
+        return String.format("XP Mentoria %s (%s + 20 xp) = %s", getTitulo(), getXpPadrao(), calcularXP());
+    }
+
+    public double getXpPadrao(){
+        return XP_PADRAO;
     }
     
 }
