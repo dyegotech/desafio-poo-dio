@@ -19,5 +19,7 @@ public class Main {
         System.out.println(c1);
         System.out.println(m1);
 
+        System.out.println(m1.calcularXP());
+        System.out.println(c1.calcularXP());
     }
 }
