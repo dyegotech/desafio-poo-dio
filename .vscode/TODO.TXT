@@ -1,14 +1,10 @@
-1) Mostrar o cálculo de XP de acordo com o tipo de conteúdo
+1) Mostrar o cálculo de XP de acordo com o tipo de conteúdo: OK
 
-2) Mostrar detalhes dos bootcamps
+2) Mostrar detalhes dos bootcamps: OK
 
-3) Listar devs por bootcamps
+3) Listar devs por bootcamps: OK
 
-4) Listar conteúdos por devs 
+4) Adicionar quantidade de vagas em bootcamps: OK
 
-5) Adicionar quantidade de vagas em bootcamps
-
-6) Validar o limite de vagas 
-
-7) Criar níveis de XP (E mostrar o progresso)
+5) Validar o limite de vagas: OK 
 

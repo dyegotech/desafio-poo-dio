@@ -14,7 +14,7 @@ public class Main {
         c1.setTitulo("Curso Java Básico");
         c1.setDescricao("Java Backend para iniciantes");
         c1.setCargaHoraria(10);
-        
+
         Curso c2 = new Curso();
         c2.setTitulo("Curso Javascript");
         c2.setDescricao("Javascript para iniciantes");
@@ -33,8 +33,10 @@ public class Main {
         // System.out.println(c1);
         // System.out.println(m1);
 
-        // System.out.printf("XP Curso (%s x %s horas) = %s", c1.getXpPadrao(), c1.getCargaHoraria(), c1.calcularXP());
-        // System.out.printf("\nXP Mentoria (%s + 20 xp) = %s", m1.getXpPadrao(), m1.calcularXP());
+        // System.out.printf("XP Curso (%s x %s horas) = %s", c1.getXpPadrao(),
+        // c1.getCargaHoraria(), c1.calcularXP());
+        // System.out.printf("\nXP Mentoria (%s + 20 xp) = %s", m1.getXpPadrao(),
+        // m1.calcularXP());
 
         // System.out.println(c1.detalhesCalculoXP());
         // System.out.println(c2.detalhesCalculoXP());
@@ -46,52 +48,81 @@ public class Main {
         conteudos1.add(m1);
         conteudos1.add(c1);
 
-        Bootcamp bootcampoJava = new Bootcamp("Java Bootcamp", "Java Backend + Mentoria", conteudos1);
-
-        // System.out.println(bootcampoJava);
+        Bootcamp bootcampoJava = new Bootcamp("Bootcamp Claro Spring", "Java Backend + Mentoria", conteudos1, 3);
         
+        // Detalhes do Bootcamp
+        System.out.println(bootcampoJava);   
+
+        // Matrículas
+
         Dev dyego = new Dev();
         dyego.setNome("Dyego");
         dyego.inscreverBootcamp(bootcampoJava);
-        
+
+        System.out.println("vagas restantes: " + bootcampoJava.getVagasRestantes());
+
         Dev maria = new Dev();
         maria.setNome("Maria");
         maria.inscreverBootcamp(bootcampoJava);
+
+        System.out.println("vagas restantes: " + bootcampoJava.getVagasRestantes());
         
-        // System.out.println(bootcampoJava.getDevsInscritos()); 
+        Dev jose = new Dev();
+        jose.setNome("Jose");
+        jose.inscreverBootcamp(bootcampoJava);
+
+        System.out.println("vagas restantes: " + bootcampoJava.getVagasRestantes());
         
-        // System.out.println("inscritos maria: " + maria.getConteudosInscritos());
-        // System.out.println("*******************\n");
-        // System.out.println("concluídos maria: " + maria.getConteudosConcluidos());
-        // System.out.println("*******************\n");
-        
-        // System.out.println(maria.calcularTotalXp());
-        // maria.progredir(null);
-        // maria.progredir(null);
-        // System.out.println("inscritos maria: " + maria.getConteudosInscritos());
-        // System.out.println("*******************\n");
-        // System.out.println("concluídos maria: " + maria.getConteudosConcluidos());
-        // System.out.println("inscritos maria: " + maria.getConteudosInscritos());
-        // System.out.println(maria.calcularTotalXp());
-        
+        Dev joao = new Dev();
+        joao.setNome("Joao");
+        joao.inscreverBootcamp(bootcampoJava);
+
+        System.out.println("vagas restantes: " + bootcampoJava.getVagasRestantes());
 
         
+        // Detalhes do Bootcamp
+        System.out.println(bootcampoJava);    
+
+        // System.out.println(bootcampoJava.getDevsInscritos());
+
+        // System.out.println("inscritos maria: " + maria.getConteudosInscritos());
+        // System.out.println("*******************\n");
+        // System.out.println("concluídos maria: " + maria.getConteudosConcluidos());
+        // System.out.println("*******************\n");
+
+        // System.out.println(maria.calcularTotalXp());
+        // maria.progredir(null);
+        // maria.progredir(null);
+        // System.out.println("inscritos maria: " + maria.getConteudosInscritos());
+        // System.out.println("*******************\n");
+        // System.out.println("concluídos maria: " + maria.getConteudosConcluidos());
+        // System.out.println("inscritos maria: " + maria.getConteudosInscritos());
+        // System.out.println(maria.calcularTotalXp());
+
         // maria.inscreverBootcamp(bootcampoJava);
         // System.out.println(dyego.getConteudosInscritos());
 
         // System.out.println(bootcampoJava);
 
         // for (Conteudo c : bootcampoJava.getConteudos()){
-        //     System.out.println(c.detalhesCalculoXP());
+        // System.out.println(c.detalhesCalculoXP());
         // }
 
-            bootcampoJava
-            .getConteudos()
-            .stream()
-            .map(conteudo -> conteudo.detalhesCalculoXP())
-            .forEach(System.out::println);
+        /* Exercícios propostos */
 
-            
+        // XP por conteúdos
+        // System.out.println("XP por conteúdos: ");
+        // bootcampoJava
+        // .getConteudos()
+        // .stream()
+        // .map(conteudo -> conteudo.detalhesCalculoXP())
+        // .forEach(System.out::println);
+
+        // Detalhes do Bootcamp
+        // System.out.println(bootcampoJava);
+
+        // System.out.println("Devs inscritos no bootcamp");
+        // bootcampoJava.getDevsInscritos().stream().forEach(System.out::println);
 
     }
 }

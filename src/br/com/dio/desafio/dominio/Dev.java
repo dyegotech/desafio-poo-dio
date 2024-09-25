@@ -14,12 +14,21 @@ public class Dev {
     }
 
     public void inscreverBootcamp(Bootcamp bootcamp) {
-        // Ao se increver, todos os conteúdos do bootcamp são inseridos na lista (Set ->
-        // Set)
-        this.conteudosInscritos.addAll(bootcamp.getConteudos());
+        if (bootcamp.getVagasRestantes() > 0){
+            // Ao se increver, todos os conteúdos do bootcamp são inseridos na lista (Set ->
+            // Set)
+            this.conteudosInscritos.addAll(bootcamp.getConteudos());
+    
+            // Insere o dev ao bootcamp
+            bootcamp.getDevsInscritos().add(this);
 
-        // Insere o dev ao bootcamp
-        bootcamp.getDevsInscritos().add(this);
+            // Consome uma vaga
+            bootcamp.setVagasRestantes();
+            System.out.println("\n" + this.nome + " Matriculado com sucesso!");
+
+        }else{
+            System.out.println("\nNão foi possível matricular o aluno " + this.nome + " pois não há vagas");
+        }
 
     }
 
@@ -108,8 +117,7 @@ public class Dev {
 
     @Override
     public String toString() {
-        return "\nDev \n[nome=" + nome + ", conteudosInscritos=" + conteudosInscritos + ", conteudosConcluidos="
-                + conteudosConcluidos + "]";
+        return "\nNome: " + nome + "\n";
     }
 
 }

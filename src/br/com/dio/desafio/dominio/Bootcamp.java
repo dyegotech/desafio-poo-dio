@@ -11,13 +11,36 @@ public class Bootcamp {
     private final LocalDate dataInicial = LocalDate.now();
     private final LocalDate dataFinal = dataInicial.plusDays(45) ;
 
+    
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
+    
+    private int qtdVagas;
+    private int vagasRestantes;
 
-    public Bootcamp(String nome, String descricao, Set<Conteudo> conteudos) {
+    
+    public Bootcamp(String nome, String descricao, Set<Conteudo> conteudos, int qtdVagas) {
         this.nome = nome;
         this.descricao = descricao;
         this.conteudos = conteudos;
+        this.qtdVagas = qtdVagas;
+        this.vagasRestantes = getQtdVagas();
+    }
+
+    public int getVagasRestantes() {
+        return vagasRestantes;
+    }
+
+    public void setVagasRestantes() {
+        this.vagasRestantes--;
+    }
+
+    public void setQtdVagas(int qtdVagas){
+        this.qtdVagas = qtdVagas;
+    }
+
+    public int getQtdVagas(){
+        return qtdVagas;
     }
 
     public String getNome() {
@@ -117,8 +140,14 @@ public class Bootcamp {
 
     @Override
     public String toString() {
-        return "Bootcamp \n[nome=" + nome + ", descricao=" + descricao + ", dataInicial=" + dataInicial + ", dataFinal="
-                + dataFinal + ", \ndevsInscritos=" + devsInscritos + ", \nconteudos=\n" + conteudos + "]";
+        return  "\nBootcamp: " + nome + 
+                "\nDescricao: " + descricao + 
+                "\nData Inicial: " + dataInicial + 
+                "\nData Final: " + dataFinal + 
+                "\nTotal Vagas: " + qtdVagas + 
+                "\nVagas restantes: " + vagasRestantes + 
+                "\n\nDevs Inscritos: \n" + devsInscritos + 
+                "\n\nConteúdos do Bootcamp: \n" + conteudos;
     }       
 
 }
